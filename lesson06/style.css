@@ -1,0 +1,12 @@
+main {
+  background-color: rgb(193, 193, 255);
+  margin: 2em 20em;
+  padding: 1em 2em;
+
+  border: 5px solid rgb(146, 146, 254);
+  border-radius: 2em;
+}
+
+h1 {
+  text-align: center;
+}
