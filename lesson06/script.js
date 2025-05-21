@@ -1,6 +1,12 @@
 let balance = 1000;
 let isRunning = true;
 
+function updateBalanceDisplay() {
+  document.querySelector(".balance-display").textContent = `$${balance.toFixed(
+    2
+  )}`;
+}
+
 function withdraw() {
   let amount = parseFloat(prompt(`Enter withdrawal amount: `));
   if (!isNaN(amount) && amount > 0) {
@@ -22,6 +28,7 @@ function withdraw() {
       alert(
         `Withdraw $${amount.toFixed(2)} - New balance: $${balance.toFixed(2)}`
       );
+      updateBalanceDisplay();
     } else {
       alert(`Insufficient funds.`);
     }
@@ -39,6 +46,7 @@ function deposit() {
       alert(
         `Deposit $${amount.toFixed(2)} - New Balance: $${balance.toFixed(2)}`
       );
+      updateBalanceDisplay();
     } else {
       alert(`The maximum deposit allowed is $50,000.`);
       deposit();
@@ -76,3 +84,10 @@ while (isRunning) {
       alert(`❌ Invalid option. Please enter "W", "D", "B", or "Q".`);
   }
 }
+
+window.onload = function () {
+  document.getElementById("withdraw").addEventListener("click", withdraw);
+  document.getElementById("deposit").addEventListener("click", deposit);
+  document.getElementById("balance").addEventListener("click", viewBalance);
+  updateBalanceDisplay();
+};
