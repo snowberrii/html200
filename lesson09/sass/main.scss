@@ -1,0 +1,80 @@
+// ---------- Partials ---------- //
+@import "variables";
+
+
+// ---------- Base ---------- //
+body {
+  background: $body-bg-color;
+  font-family: $font-fam;
+  margin: 0;
+  padding: 0;
+}
+
+// ---------- Layout ---------- //
+.container {
+  background: $container-color;
+  color: $text-color;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  place-self: center;
+  margin: 2em;
+  padding: 1em;
+}
+
+// ---------- Profile Image Side ---------- //
+.profile {
+  align-self: center;
+  place-items: center;
+  margin: 1em 0 1em;
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  img {
+    width: 80%;
+    display: block;
+    margin: 1em auto;
+  }
+}
+
+// ---------- Profile Information Side ---------- //
+ul {
+  padding: 1.5em;
+  margin: 1em;
+  flex: 2;
+  background: $information-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  li {
+    list-style: none;
+
+    i {
+      color: $linkedIn-color;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.linked-in {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: $text-color;
+
+  &:hover {
+    color: $linkedIn-color;
+  }
+
+  &:visited {
+    color: $text-color;
+  }
+}
+
+// ---------- Partials ---------- //
+@import "responsive";
